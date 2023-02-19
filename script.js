@@ -31,7 +31,7 @@ function SendQuestion() {
       if (json.error?.message) {
         result.value += `Error: ${json.error.message}`;
       } else if (json.choices?.[0].text) {
-        var text = json.choices[0].text || "Sem resposta";
+        var text = json.choices[0].text || "No reply";
 
         result.value += "Chat GPT: " + text;
       }
@@ -47,8 +47,8 @@ function SendQuestion() {
 
   if (result.value) result.value += "\n\n\n";
 
-  result.value += `Eu: ${sQuestion}`;
-  inputQuestion.value = "Carregando...";
+  result.value += `I: ${sQuestion}`;
+  inputQuestion.value = "Loading...";
   inputQuestion.disabled = true;
 
   result.scrollTop = result.scrollHeight;
